@@ -1,0 +1,91 @@
+<div class="nav-container">
+    <div class="side-nav">
+        <a href="#">Clients</a>
+        <a href="#">Client look history</a>
+        <a href="#">Emergency PIN Configuration</a>
+        <a href="#">Emergency PIN Hisotry</a>
+    </div>
+    <div class="clients-table">
+        <div class="first-part">
+            <div class="custom-buttons">
+                <button class="btn btn-info" (click)="openModal()">✚ New</button>
+                <app-user-create *ngIf="isModalOpen" (closeModal)="closeModal()"></app-user-create>
+                <button class="btn btn-info" (click)="exportTableToCsv()">📤 Export</button>
+            </div>
+            <div class="custom-search">
+                <form (ngSubmit)="search()" class="flex-form" >
+                    <label for="from">
+                      <i class="ion-location"></i>
+                    </label>
+                    <input [(ngModel)]="searchTerm" type="search" class="search-class" placeholder="Enter shared key" name="searchTerm" />
+                    <input type="submit" value="Search">
+                </form>
+                <button class="btn btn-info" (click)="toggleAdvancedSearch()">🔍 Advanced Search</button>
+            </div>
+            <div class="custom-search" *ngIf="showAdvancedSearch">
+                <form (ngSubmit)="submitAdvancedSearch()" class="form-advancedsearch">
+                    <div class="form-content">
+                        <div class="form-group">
+                            <label for="shared_key">Shared Key</label>
+                            <input type="text" class="form-control" placeholder="Shared Key" [(ngModel)]="advancedSearch.sharedKey" name="sharedKey" id="sharedKey" />
+                        </div>
+                        <div class="form-group">
+                            <label for="business_id">Business ID</label>    
+                            <input type="text" class="form-control" placeholder="Business ID" [(ngModel)]="advancedSearch.business_id" name="business_id" id="business_id" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>    
+                            <input type="text" class="form-control" placeholder="E-mail" [(ngModel)]="advancedSearch.email" name="email" id="email" />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="form-control" placeholder="Phone" [(ngModel)]="advancedSearch.phone" name="phone" id="phone" />
+                        </div>
+                        <button type="submit" class="btn btn-info custom-ok">Ok</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Clients</h2>
+            <table class="table table-stripped" style="box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);">
+                <thead>
+                    <tr>
+                        <th>Shared Key</th>
+                        <th>Business ID</th>
+                        <th>E-mail</th>
+                        <th>Phone</th>
+                        <th>Data Added</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="searchResults else usersBlock">
+                    <tr *ngFor="let user of searchResults">
+                        <td> {{ user.shared_key }} </td>
+                        <td> {{ user.business_id }} </td>
+                        <td> {{ user.email }} </td>
+                        <td> {{ user.phone }} </td>
+                        <td> {{ user.addedDate | date:'dd/MM/yyyy' }} </td>
+                        <td>
+                            <button class="btn btn-info">🖊️</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <ng-template #usersBlock>
+                    <tbody *ngFor="let user of users">
+                        <tr>
+                            <td> {{ user.shared_key }} </td>
+                            <td> {{ user.business_id }} </td>
+                            <td> {{ user.email }} </td>
+                            <td> {{ user.phone }} </td>
+                            <td> {{ user.addedDate | date:'dd/MM/yyyy' }} </td>
+                            <td>
+                                <button class="btn btn-info">🖊️</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </ng-template>
+            </table>
+        </div>
+    </div>    
+</div>

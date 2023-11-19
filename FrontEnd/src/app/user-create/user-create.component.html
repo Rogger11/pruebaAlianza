@@ -1,0 +1,42 @@
+<div class="modal-background">
+    <div class="container">
+        <h2>Create New Client</h2>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-content">
+                <div class="form-group">
+                    <label for="shared_key">Shared Key</label>
+                    <input type="text" class="form-control" id="shared_key" [(ngModel)]="user.shared_key" name="shared_key" required>
+                </div>
+                <div class="form-group">
+                    <label for="business_id">Business ID</label>
+                    <input type="text" class="form-control" id="business_id" [(ngModel)]="user.business_id" name="business_id" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="text" class="form-control" id="email" [(ngModel)]="user.email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="addedDate">Data Added</label>
+                    <input type="text" class="form-control" id="addedDate" [(ngModel)]="user.addedDate" name="addedDate" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <input type="text" class="form-control" id="startDate" [(ngModel)]="user.startDate" name="startDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="endDate">End Date</label>
+                    <input type="text" class="form-control" id="endDate" [(ngModel)]="user.endDate" name="endDate" required>
+                </div>
+                <!--<div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password">
+                </div>-->
+                <button class="btn btn-info mt-2 custom-ok" type="submit">Ok</button>
+            </div>
+        </form>
+    </div>
+</div>

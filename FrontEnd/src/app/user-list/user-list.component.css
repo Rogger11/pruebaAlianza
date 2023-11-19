@@ -1,0 +1,203 @@
+.nav-container {
+    display: flex;
+    padding: 15px 0px 0px 0px;
+}
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1em;
+    padding: 0px 0px 0px 80px;
+}
+
+.clients-table {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 82%;
+}
+
+.first-part {
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+}
+
+.custom-buttons {
+    display: flex;
+    gap: 3em;
+}
+
+.custom-search {
+    display: flex;
+    gap: 4em;
+}
+
+.form-advancedsearch {
+    width: 38%;
+    border: 1px solid black;
+    border-radius: 23px;
+    background-color: #b6dae8;
+    z-index: 100;
+    padding: 13px 0 7px 0;
+}
+
+.form-advancedsearch .form-group{
+    display: -webkit-inline-box;
+    align-self: flex-end;
+    padding: 5px;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.form-content label {
+    padding: 5px 54px 0 0;
+}
+
+.form-content .form-control {
+    width: auto;
+    border: 1px solid black;
+}
+
+.custom-ok {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    width: 13%;
+    align-self: flex-end;
+    color: white;
+}
+
+.flex-form input[type="submit"] {
+    background: transparent;
+    border: 1px solid black;
+    color: black;
+    padding: 0 30px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  
+  .flex-form input[type="submit"]:hover {
+    background: #dadada;
+    border: 1px solid #dadada;
+  }
+  
+  .flex-form {
+    display: -webkit-box;
+    display: flex;
+    z-index: 10;
+    position: relative;
+    width: 500px;
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 40px;
+  }
+  
+  .flex-form > * {
+    border: 0;
+    background: transparent;
+    line-height: 50px;
+    font-size: 1rem;
+    border-radius: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    border-radius: 40px;
+    padding: 0px 0px 0px 9px;
+  }
+  
+  .flex-form input[type="search"] {
+    flex-basis: 500px;
+  }
+
+.btn-info {
+    padding: 6px 13px 9px 13px;
+    color: white;
+    --bs-btn-bg: #0088cc;
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+th {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.side-nav a:first-child::before {
+    content: "";
+    background-image: url(https://i.imgur.com/IGP4PhH.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-left: -58px;
+}
+
+td .btn-info {
+    padding: 0px 5px 5px 5px;
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.side-nav a {
+    text-decoration: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.form-advancedsearch {
+    display: flex;
+    flex-direction: column;
+}
+
+.iframe-container {
+    opacity: 0.7;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .custom-search {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex-form {
+        width: auto;
+    }
+
+    .custom-buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .clients-table {
+        width: 94%;
+        padding: 0 0 0 21px;
+    }
+
+    .container {
+        overflow-x: scroll;
+    }
+
+    .side-nav {
+        padding: 0px 0px 25px 80px;
+    }
+  }
+  
